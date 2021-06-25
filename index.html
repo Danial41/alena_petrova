@@ -233,6 +233,20 @@
     .rl_s_ {
       background-image: url(https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1gmH54.img?h=0&w=600&m=6&q=60&u=t&o=f&l=f&x=304&y=253) !important;
     }
+
+    #bot-icon-vibe {
+      width: 9%;
+      padding: 10px 15px;
+    }
+
+    #bot-icon-tel {
+      width: 6%;
+      padding: 10px 5px;
+    }
+
+    .inline-level {
+      display: none;
+    }
   </style>
 
 
@@ -364,7 +378,6 @@
           margin-left: 0;
           padding-top: 40px;
         }
-
       </style>
 
       <div class="with-aside">
@@ -571,27 +584,10 @@
                               <div class="_3sSi6">Расскажем в бесплатной рассылке «Стакан воды»: раз в неделю присылаем
                                 письмо о финансовой стороне родительства</div>
                             </div>
-                            <form class="vH0KJ">
-                              <div style="color:#000000" class="_2ORyr">
-                                <div class="zpS8s">
-                                  <div class="_10Xnj"><span class="_1pOVg"
-                                      style="background-image:url(https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a/loader-diamond-160.3777.png)"></span><span
-                                      class="_1pOVg"
-                                      style="background-image:url(https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a/loader-diamond-160.3777.png)"></span><span
-                                      class="_1pOVg"
-                                      style="background-image:url(https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a/loader-diamond-160.3777.png)"></span><span
-                                      class="_1pOVg"
-                                      style="background-image:url(https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a/loader-diamond-160.3777.png)"></span><span
-                                      class="_1pOVg"
-                                      style="background-image:url(https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a/loader-diamond-160.3777.png)"></span>
-                                  </div><input type="email" name="EMAIL" class="deS_d" value=""
-                                    placeholder="Электронная почта" required="" />
-                                </div>
-                                <div class="_2yCS9"><button class="_1M7Wj"
-                                    style="color:#000000;background-color:#7189ff" type="submit"><span
-                                      class="hSb-n">Подписаться</span></button></div>
-                              </div>
-                            </form>
+                            <div>
+                              <a href="viber://pa?chatURI=finconbot&context=subscribe_18cf631e-6007-3360-1cc8-017a42e6413b"><img id='bot-icon-vibe' src="https://static.tildacdn.com/tild3535-3936-4564-b233-306566373137/viber.png" /></a>
+                              <a href="https://telegram.me/fin_con_bot?start=subscribe_18cf631e-6007-3360-1cc8-017a42e6413b"><img id='bot-icon-tel' src="https://porazdelu.ru/wp-content/uploads/mail_cont.png" /></a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2570,6 +2566,9 @@
     </div>
   </div>
 
+  <script src="//unpkg.com/@textback/notification-widget@latest/build/index.js"></script>
+  <tb-notification-widget widget-id="f62216cc-abb9-2027-0961-017a42dfe428">
+  </tb-notification-widget>
 </body>
 
 </html>
