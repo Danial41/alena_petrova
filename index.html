@@ -264,24 +264,6 @@
 
 
 
-  <script>
-    window.CONSTANTS = (window.CONSTANTS || {
-      "ENV_NAME": "production",
-      "ASSETS_CDN_URL": "https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a",
-      "SOCIAL_API_URL": "https://social.journal.tinkoff.ru",
-      "MERCURY_API_URL": "https://journal.tinkoff.ru/api",
-      "SCRIBE_API_URL": "https://scribe.journal.tinkoff.ru/api",
-      "RECCO_API_URL": "https://dp.tinkoff.ru/recco/api",
-      "URANIA_API_URL": "https://urania.journal.tinkoff.ru",
-      "CI_COMMIT_SHA": "c9aee7f76300ba9613db72151c6c3f144a675b2a",
-      "FEATURE_DEV_URL": "",
-      "CALCULATIONS_TAB_FEATURE_HASH": "6d6f152dcd93ac03d689d65deda818c2c5cbd89d"
-    })
-  </script>
-
-
-
-
   <script
     src="https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a/comments~main.js"
     defer></script>
@@ -326,240 +308,12 @@
 
   <script src="https://static-cdn.tinkoffjournal.ru/js/analytics.K1vFzo.js" defer></script>
 
-  <script>
-    (function () {
-      var logoSvg =
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 14" fill="#000000"><path d="M90.5 0L85 4.9V0h-6.3v4.9L73.3 0h-8.8l8.6 6.7-9.3 7.3h8.8l6.1-5.5V14H85V8.5l6.1 5.5h8.8l-9.3-7.3L99.3 0h-8.8zM0 0v5.5h7.4V14h6.4V5.5h7.4V0H0zm25.2 9h38.6V4H25.2v5z"></path></svg>';
-      const svgDataUrl = 'data:image/svg+xml;base64,' + btoa(logoSvg)
-      var consoleStyles = {
-        'h1': 'font: 180px/1 Graphik, "Helvetica Neue", Helvetica, Arial, sans-serif;',
-        'lead': 'font: 28px/1 Charter, Georgia, "Times New Roman", Times, serif;',
-        'p': 'font: 16px/1 Charter, Georgia, "Times New Roman", Times, serif;',
-        'logo': 'background-image: url(' + svgDataUrl +
-          '); padding-bottom: 80px; padding-left: 440px; margin: 10px; background-size: contain; background-position: center center; background-repeat: no-repeat;'
-      };
-      console.log('%c%s', consoleStyles.logo, '');
-      console.log('%c%s', consoleStyles.lead, 'Поздравляем! Вы разблокировали');
-      console.log('%c%s', consoleStyles.lead, 'доступ к [ДАННЫЕ УДАЛЕНЫ]');
-      console.log('\n')
-      console.log('%c%s', consoleStyles.p, 'Есть что предложить? Пишите на journal@tinkoff.ru');
-      console.log('%c%s', consoleStyles.p, 'Есть желание творить █████ и ██████ в технической');
-      console.log('%c%s', consoleStyles.p, 'команде Т—Ж? Тогда жду писем a.plesovskikh@tinkoff.ru');
-      console.log('%c%s', consoleStyles.p,
-        'https://journal.tinkoff.ru/guide/skolko-dekretniye/Вакансии: https://journal.tinkoff.ru/team/');
-      console.log('\n\n')
-    })()
-  </script>
-
-
-  <script>
-    (function () {
-      try {
-        window.dataLayer = window.dataLayer || [];
-        var userId = parseInt(window.localStorage.getItem('userId'), 10);
-        if (!userId || userId <= 0) {
-          return;
-        }
-        window.dataLayer.push({
-          userId: userId
-        });
-      } catch (error) {}
-    })()
-  </script>
-  <script>
-    mindbox =
-      window.mindbox ||
-      function () {
-        mindbox.queue.push(arguments)
-      }
-    mindbox.queue = mindbox.queue || []
-    mindbox('create')
-
-    function handleMindBoxLoad() {
-      tryTriggerArticleView()
-
-      function tryTriggerArticleView() {
-        var dlMeta = window.dataLayer && window.dataLayer[0]
-        if (!dlMeta || !dlMeta.articleFormat) {
-          // Если в dlMeta лежит не мета инфа, а что-то другое, то
-          // не шлём ViewArticle совсем, потому что это не статья
-          return
-        }
-        mindbox('async', {
-          operation: 'ViewArticle',
-          data: {
-            viewProduct: {
-              product: {
-                ids: {
-                  webSite: document.location.pathname,
-                },
-                name: document.title,
-                url: document.location.href,
-                pictureUrl: getArticleImage(),
-                customFields: dlMeta,
-                price: '1',
-              },
-            },
-          },
-        })
-      }
-
-      function getArticleImage() {
-        var ogEl = document.querySelector(
-          'meta[property="og:image:secure_url"]',
-        )
-        return ogEl ? ogEl.content : ''
-      }
-    }
-  </script>
-  <script src="https://api.mindbox.ru/scripts/v1/tracker.js" onload="handleMindBoxLoad()" defer></script>
-  <noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-KFWJK3" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = 'http://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-KFWJK3');
-  </script>
-
-  <script src="https://www.cdn-tinkoff.ru/twa/journal/stable/client.js" defer></script>
-
-  <script>
-    function handleDtmScriptLoaded() {
-      if (window._satellite && typeof window._satellite.pageBottom === 'function') {
-        window._satellite.pageBottom();
-      }
-    }
-  </script>
-  <script
-    src="http://assets.adobedtm.com/76e9ce042acd0b2e7c2690dc660a5306d9119bde/satelliteLib-3cd4b5e6df82e427df58487cf163f78dbe1fb0b3.js"
-    onload="handleDtmScriptLoaded()" defer></script>
-  <script>
-    (function (d, w, c) {
-      (w[c] = w[c] || []).push(function () {
-        try {
-          w.yaCounter45501540 = new Ya.Metrika({
-            id: 45501540,
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true,
-            trackHash: true
-          });
-        } catch (e) {}
-      });
-      var n = d.getElementsByTagName('script')[0],
-        s = d.createElement('script'),
-        f = function () {
-          n.parentNode.insertBefore(s, n);
-        };
-      s.async = true;
-      s.src = 'https://mc.yandex.ru/metrika/watch.js';
-      if (w.opera == '[object Opera]') {
-        d.addEventListener('DOMContentLoaded', f, false);
-      } else {
-        f();
-      }
-    })(document, window, 'yandex_metrika_callbacks');
-  </script><noscript>
-    <div><img src="https://mc.yandex.ru/watch/45501540" style="position:absolute; left:-9999px;" alt=""></div>
-  </noscript>
   <meta name="facebook-domain-verification" content="j8mzb3ct8dwpulbbqtphmuarrhp6qc" />
 
 
 </head>
 
 <body class="layout-supernova" itemscope itemtype="https://schema.org/WebPage">
-
-  <script>
-    var
-      IS_APPLE_LIKE = !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i),
-      IS_IOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform),
-      IS_WEBKIT = !!navigator.userAgent.match(/WebKit/i),
-      IS_IOS_SAFARI = IS_IOS && IS_WEBKIT && !navigator.userAgent.match(/CriOS/i);
-
-    document.documentElement.className += (IS_APPLE_LIKE ? ' is-apple-like' : ' not-apple-like');
-
-    if (IS_IOS) {
-      document.documentElement.className += ' is-ios';
-    }
-
-    if (IS_IOS_SAFARI) {
-      document.documentElement.className += ' is-ios-safari';
-    }
-  </script>
-
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "description": "Кому положены декретные выплаты. Сколько длится период декретного отпуска и как он оформляется. Как рассчитываются декретные выплаты и какова их сумма.",
-      "image": {
-        "type": "ImageObject",
-        "url": "https://img-cdn.tinkoffjournal.ru/-/og-fb_maternity-allowance.skdkz6yk0anz.png",
-        "width": "720 px",
-        "height": "382 px"
-      },
-      "name": "Как рассчитать декретные выплаты",
-      "sameAs": ["https://www.facebook.com/tinkoffjournal", "https://vk.com/tinkoffjournal",
-        "https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA", "https://www.instagram.com/tinkoffjournal/",
-        "https://t.me/tinkoffjournal", "https://twitter.com/tinkoffjournal"
-      ],
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://journal.tinkoff.ru/guide/skolko-dekretniye/",
-        "dateModified": "2021-01-31T22:35:15.482206+00:00",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Т—Ж",
-          "logo": "https://static-cdn.tinkoffjournal.ru/img/core-logo.350x60.png"
-        }
-      },
-      "inLanguage": "ru",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Т—Ж",
-        "logo": "https://static-cdn.tinkoffjournal.ru/img/core-logo.350x60.png"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Ольга Макеева"
-      },
-      "dateModified": "2021-01-31T22:35:15.482206+00:00",
-      "datePublished": "2020-02-21T10:14:54.001201+00:00",
-      "headline": "Как рассчитать декретные выплаты",
-      "about": [{
-        "@type": "Event",
-        "name": "декрет"
-      }, {
-        "@type": "Event",
-        "name": "дети"
-      }, {
-        "@type": "Event",
-        "name": "право"
-      }, {
-        "@type": "Event",
-        "name": "государство"
-      }]
-    }
-  </script>
-
-
-
-
-
-
-
 
   <article class="article article--guide" data-id="118" data-uid="skolko-dekretniye" data-name="skolko-dekretniye">
 
@@ -1502,17 +1256,6 @@
         <div class="_3gOWc _2pE8-">
           <div class="_1XRW_" data-loader="true">
             <div class="_3_8aL">
-              <div class="vBmro">
-                <picture class="_3VuI3">
-                  <source
-                    srcSet="https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a/loader-triangle-baton.2b06.webp"
-                    type="image/webp" />
-                  <source
-                    srcSet="https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a/loader-triangle-baton.8022.png"
-                    type="image/jpeg" /><img
-                    src="https://static2.tinkoffjournal.ru/mercury-front/c9aee7f76300ba9613db72151c6c3f144a675b2a/loader-triangle-baton.8022.png" />
-                </picture>
-              </div>
             </div>
           </div>
           <div class="_1qbb-" data-id="171673" data-level="0" itemProp="comment" itemscope=""
@@ -2942,33 +2685,13 @@
 
 
   <script>
-    window.PRODUCTION = true;
-    window.TJ = {
-      api: '/api/',
-      uploads: 'https://img-cdn.tinkoffjournal.ru/-/',
-      build: 'https://static-cdn.tinkoffjournal.ru/',
-      social: {
-        baseUrl: 'https://social.journal.tinkoff.ru',
-        apiUrl: 'https://social.journal.tinkoff.ru/api/',
-      }
-    };
+    
   </script>
-
-
-
-  <script src="https://static-cdn.tinkoffjournal.ru/js/vendor.fPb2Fc.js" defer></script>
-  <script src="https://static-cdn.tinkoffjournal.ru/js/main.rLiigR.js" defer></script>
-
-
-
-
 
 
 
 
 
 </body>
-
-<!-- Mirrored from journal.tinkoff.ru/guide/skolko-dekretniye/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 25 Jun 2021 12:42:39 GMT -->
 
 </html>
